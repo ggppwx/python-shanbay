@@ -20,16 +20,11 @@ Features
 * send/reply message
 * manage team
 * support shanbay api v1
+* A simple script adding words in sync folder to shanbay 
 
 
 Installation
 ------------
-
-To install python-shanbay, simply:
-
-.. code-block:: bash
-
-    $ pip install shanbay
 
 
 Basic Usage
@@ -57,7 +52,7 @@ __ https://gist.github.com/mozillazg/4af649ff88612b2de7c7
     u'username': u'mozillazg'}
     >>>
 
-用户名密码认证 API
+用户名密码认证 API (unable to use the REST API)
 
 .. code-block:: python
 
