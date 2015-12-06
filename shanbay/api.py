@@ -35,7 +35,7 @@ class API(object):
         kwargs = {}
         if method in ('get', 'delete'):
             kwargs['params'] = params
-        elif method in ('post',):
+        elif method in ('post', 'put'):
             kwargs['data'] = data
         logger.debug('kwargs: {0}'.format(kwargs))
 
@@ -61,6 +61,15 @@ class API(object):
             'id': word_id
         }
         return self._request(url, method='post', data=data).json()
+
+    @_catch_token_error
+    def forget(self, learning_id, 
+               url='https://api.shanbay.com/bdc/learning/{learning_id}/'):
+        url = url.format(learning_id=learning_id)
+        data = {
+            'forget' : 1
+        }
+        return self._request(url, method='put', data=data).json()
 
     @_catch_token_error
     def examples(self, word_id, type=None,

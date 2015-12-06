@@ -6,29 +6,22 @@ import os
 
 from shanbay.api import API
 from shanbay import AuthException
+import unittest
 current_dir = os.path.dirname(__file__)
 
-token = json.loads(os.environ.get('SHANBAY_TOKEN'))
+with open('token.json') as f:
+    token = json.loads(f.read())
 
-
-def test_exception():
-    api = API('1333', token={})
-    try:
-        api.user()
-    except AuthException:
-        assert True
-
-
-class TestAPI(object):
+class TestAPI(unittest.TestCase):
     # def __init__(self):   # 不能使用 __init__ 否则 py.test 会忽略这个类
     #     pass
-
-    def setup(self):
+    def setUp(self):
         self.api = API('091e43d72fe4466a0433', token=token)
 
     def test_user(self):
-        assert self.api.user()['username'] == 'mozillazg'
-
+        print(self.api.user()['username'])
+        pass
+    
     def test_word(self):
         assert self.api.word('hello')['data']['id']
 

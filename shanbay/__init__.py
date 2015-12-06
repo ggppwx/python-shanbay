@@ -40,7 +40,7 @@ class Shanbay(object):
     USER_AGENT = 'python-shanbay/%s' % __version__
 
     def __init__(self, username, password):
-        self._request = requests.Session()
+        self._request = requests.Session() # the request is a session
         self.username = username
         self.password = password
 
@@ -70,10 +70,7 @@ class Shanbay(object):
             'csrfmiddlewaretoken': token,
             'username': self.username,
             'password': self.password,
-            'login': '',
-            'continue': 'home',
-            'u': 1,
-            'next': '',
+
         }
         return self.request(url, 'post', data=data, **kwargs).ok
 

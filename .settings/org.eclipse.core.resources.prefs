@@ -1,0 +1,9 @@
+eclipse.preferences.version=1
+encoding//shanbay/__init__.py=utf-8
+encoding//shanbay/api.py=utf-8
+encoding//shanbay/exceptions.py=utf-8
+encoding//shanbay/message.py=utf-8
+encoding//tests/get_token.py=utf-8
+encoding//tests/test_api.py=utf-8
+encoding//tests/test_login.py=utf-8
+encoding//tests/test_message.py=utf-8
